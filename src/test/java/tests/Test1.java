@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class Test1 {
 
@@ -11,13 +15,25 @@ public class Test1 {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://demoqa.com/");
+        driver.get("https://demoqa.com/text-box");
         driver.manage().window().maximize();
 
-        WebElement callElement = driver.findElement(By.className("avatar mx-auto white"));
-        callElement.click();
 
-        driver.close();
+        WebElement fullName = driver.findElement(By.id("userName"));
+        fullName.sendKeys("Merve");
+
+        WebElement email = driver.findElement(By.id("userEmail"));
+        email.sendKeys("mervealgi@gmail.com");
+
+        WebElement currentAdres = driver.findElement(By.id("currentAddress"));
+        currentAdres.sendKeys("İstanbul");
+
+        WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
+        permanentAddress.sendKeys("İstanbul");
+
+
+
+
     }
 
 
