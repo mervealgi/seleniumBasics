@@ -37,9 +37,12 @@ public class Test1 {
         WebElement submitButton = driver.findElement(By.id("submit"));
         submitButton.click();
 
+        WebElement assertName = driver.findElement(By.xpath("//div/p[@id='name']"));
+        assertName.getText();
+        System.out.println("Name:Merve");
 
-
+        WebElement assertEmail = driver.findElement(By.xpath("//div/p[@id='email']"));
+        assertName.getText();
+        System.out.println("Email:mervealgi@gmail.com");
     }
-
-
 }
