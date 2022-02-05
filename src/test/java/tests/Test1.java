@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,6 +32,10 @@ public class Test1 {
         WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
         permanentAddress.sendKeys("İstanbul");
 
+        JavascriptExecutor js = (JavascriptExecutor) driver;        //submit button can not seen
+        js.executeScript("window.scrollBy(0,250)", "");
+        WebElement submitButton = driver.findElement(By.id("submit"));
+        submitButton.click();
 
 
 
