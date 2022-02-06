@@ -18,14 +18,20 @@ public class dynamicProperties {
 
         WebElement disableButton = driver.findElement(By.xpath("//div/p"));
         String disableButtonText = disableButton.getText();
-        System.out.println("disableButtonText");
+        System.out.println("Button is disable yet");
 
         WebElement afterEnable = driver.findElement(By.id("enableAfter"));
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.elementToBeClickable(afterEnable));
         afterEnable.click();
 
-        //WebElement colorChanged = driver.findElement(By.);
+        WebElement colorChanged = driver.findElement(By.id("colorChange"));
+        boolean isVisible = colorChanged.isEnabled();
+
+        if (isVisible){
+            System.out.println("Button is visible");
+            colorChanged.click();
+        }
 
 
 
