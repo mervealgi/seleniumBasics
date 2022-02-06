@@ -15,8 +15,16 @@ public class radioButton {
         driver.get("https://demoqa.com/radio-button");
         driver.manage().window().maximize();
 
-        WebElement radioButton = driver.findElement(By.xpath("//div[@class='custom-control custom-radio custom-control-inline'][2]/input[@id='impressiveRadio']"));
-        radioButton.click();
+        WebElement radioButton = driver.findElement(By.cssSelector("label[for='yesRadio']"));
+
+        boolean isEnable = radioButton.isEnabled();
+        if(isEnable){
+            radioButton.click();
+            System.out.println("Button was clicked");
+        }
+
+        WebElement output = driver.findElement(By.className("mt-3"));
+        System.out.println(output.getText());
 
     }
 }
