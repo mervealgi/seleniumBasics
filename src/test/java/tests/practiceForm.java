@@ -32,6 +32,5 @@ public class practiceForm {
 
         boolean isSelected = sportCheckbox.isSelected();
         System.out.println(isSelected);
-
     }
 }
