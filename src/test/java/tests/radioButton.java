@@ -20,11 +20,20 @@ public class radioButton {
         boolean isEnable = radioButton.isEnabled();
         if(isEnable){
             radioButton.click();
-            System.out.println("Button was clicked");
+            System.out.println("Radio button was clicked");
         }
 
-        WebElement output = driver.findElement(By.className("mt-3"));
+        WebElement assertButton = driver.findElement(By.id("yesRadio"));
+        boolean isSelected = assertButton.isSelected();
+        if(isSelected){
+            System.out.println("Radio button was selected");
+        }
+
+        WebElement output = driver.findElement(By.cssSelector("p.mt-3"));
         System.out.println(output.getText());
+
+        WebElement radiButtonNo = driver.findElement(By.id("noRadio"));
+        System.out.println(radiButtonNo.isEnabled());
 
     }
 }
