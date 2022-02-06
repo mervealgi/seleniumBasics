@@ -25,6 +25,8 @@ public class dynamicProperties {
         wait.until(ExpectedConditions.elementToBeClickable(afterEnable));
         afterEnable.click();
 
+        //WebElement colorChanged = driver.findElement(By.);
+
 
 
 
