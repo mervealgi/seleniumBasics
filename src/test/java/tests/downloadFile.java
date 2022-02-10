@@ -11,7 +11,7 @@ public class downloadFile {
 
     public static void main(String[] args){
 
-        System.setProperty("chromedriver.driver.crome","drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://demoqa.com/upload-download");
