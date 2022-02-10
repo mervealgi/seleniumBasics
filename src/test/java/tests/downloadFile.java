@@ -20,7 +20,7 @@ public class downloadFile {
         WebElement downloadButton = driver.findElement(By.id("downloadButton"));
         downloadButton.click();
 
-        String downloadPath = "Users/Dell/Downloads";
+        String downloadPath = "/Users//Dell//Downloads";
         String downloadFileName = "sampleFile.jpg";
 
         boolean isDownloaded = isFileDownloaded(downloadPath,downloadFileName);
