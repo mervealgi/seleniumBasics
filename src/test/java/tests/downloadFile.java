@@ -20,24 +20,24 @@ public class downloadFile {
         WebElement downloadButton = driver.findElement(By.id("downloadButton"));
         downloadButton.click();
 
-        String downloadPath = "C:\\Users\\Dell\\Downloads";   //your path
-        String downloadFileName = "sampleFile.jpg";
+        String path = "C:\\Users\\Dell\\Downloads";   //your path
+        String fileName = "sampleFile.jpg";
         Thread.sleep(5000);
 
-        boolean isDownloaded = isFileDownloaded(downloadPath,downloadFileName);
+        boolean isDownloaded = isFileDownloaded(path,fileName);
         System.out.println(isDownloaded);
     }
 
-    public static boolean isFileDownloaded(String path, String fileName){
+    public static boolean isFileDownloaded(String downloadPath, String fileName){
 
-        File file = new File(path);
+        File file = new File(downloadPath);
         File[] files = file.listFiles();
 
         for(int i = 0; i <files.length; i++){
             if(files[i].getName().equals(fileName)){
-                files[i].delete();
                 return true;
             }
-        }return false;
+        }
+        return false;
     }
 }
