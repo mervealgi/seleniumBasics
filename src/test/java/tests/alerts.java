@@ -14,6 +14,7 @@ public class alerts {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/alerts");
+        driver.manage().window().maximize();
 
         driver.findElement(By.id("alertButton")).click();
 
@@ -22,7 +23,6 @@ public class alerts {
 
         System.out.println(driver.switchTo().alert().getText());
         driver.switchTo().alert().accept();
-
 
     }
 }
