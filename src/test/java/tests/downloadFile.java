@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
+import java.sql.SQLOutput;
 
 public class downloadFile {
 
@@ -21,7 +22,7 @@ public class downloadFile {
         downloadButton.click();
 
         String path = "C:\\Users\\Dell\\Downloads";   //your path
-        String fileName = "sampleFile.jpg";
+        String fileName = "sampleFile.jpeg";
         Thread.sleep(5000);
 
         boolean isDownloaded = isFileDownloaded(path,fileName);
@@ -35,6 +36,7 @@ public class downloadFile {
 
         for(int i = 0; i <files.length; i++){
             if(files[i].getName().equals(fileName)){
+                System.out.println(i);
                 return true;
             }
         }
