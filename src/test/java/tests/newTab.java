@@ -21,8 +21,10 @@ public class newTab {
 
         List<String> tabs = new ArrayList<>(driver.getWindowHandles());
         System.out.println(tabs.size());
+
         driver.switchTo().window(tabs.get(1));
         System.out.println(driver.getCurrentUrl());
+        driver.close();
 
     }
 }
