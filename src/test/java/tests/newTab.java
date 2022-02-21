@@ -19,11 +19,11 @@ public class newTab {
         WebElement tabButton = driver.findElement(By.id("tabButton"));
         tabButton.click();
 
-        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
-        System.out.println(tabs.size());
+        List<String> tabs = new ArrayList<>(driver.getWindowHandles()); //tab list
+        System.out.println(tabs.size());                //how many tabs we have
 
-        driver.switchTo().window(tabs.get(1));
-        System.out.println(driver.getCurrentUrl());
+        driver.switchTo().window(tabs.get(1));          //switch to scnd one
+        System.out.println(driver.getCurrentUrl());     //take url
         driver.close();
 
     }
